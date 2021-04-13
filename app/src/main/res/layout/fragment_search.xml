@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.SearchFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/windowBackground">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/windowBackground">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"/>
+            <com.hendraanggrian.appcompat.widget.SocialAutoCompleteTextView
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:background="@android:color/transparent"
+                android:hint="Search...."
+                android:layout_marginStart="10dp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/selection_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar"
+        android:padding="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/accounts"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Accounts"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/tags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Tags"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/colorAccent"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selection_type"
+            android:orientation="vertical">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_users"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bar"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view_tags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recycler_view_users"
+                android:visibility="gone"
+                android:layout_marginTop="5dp"/>
+        </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
